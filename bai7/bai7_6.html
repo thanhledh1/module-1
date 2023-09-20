@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="number" placeholder="Nhập số thứ nhất" id="so1"></td>
+            <td><input type="number" placeholder="Nhập số thứ nhất" id="so2"></td>
+            <td><input type="button" value="+" onclick="oncl1()"></td>
+            <td><input type="button" value="-" onclick="oncl2()"></td>
+            <td><input type="button" value="*" onclick="oncl3()"></td>
+            <td><input type="button" value="/" onclick="oncl4()"></td>
+        </tr>
+    </table>
+    <p id="ket_qua"></p>
+    <script>
+        function oncl1(){
+            var a = document.getElementById('so1').value;
+            var A = parseInt(a)
+            var b = document.getElementById("so2").value;
+            var B = parseInt(b)
+            ket_qua = B + A
+            document.getElementById('ket_qua').innerHTML = "Kết Quả: " + ket_qua
+        }
+        function oncl2(){
+            var a = document.getElementById('so1').value;
+            var A = parseInt(a)
+            var b = document.getElementById("so2").value;
+            var B = parseInt(b)
+            ket_qua = A - B
+            document.getElementById('ket_qua').innerHTML = "Kết Quả: " + ket_qua
+        }
+        function oncl3(){
+            var a = document.getElementById('so1').value;
+            var A = parseInt(a)
+            var b = document.getElementById("so2").value;
+            var B = parseInt(b)
+            ket_qua = A * B
+            document.getElementById('ket_qua').innerHTML = "Kết Quả: " + ket_qua
+        }
+        function oncl4(){
+            var a = document.getElementById('so1').value;
+            var A = parseInt(a)
+            var b = document.getElementById("so2").value;
+            var B = parseInt(b)
+            ket_qua = A / B
+            document.getElementById('ket_qua').innerHTML = "Kết Quả: " + ket_qua
+        }
+        
+        
+    </script>
+</body>
+</html>
