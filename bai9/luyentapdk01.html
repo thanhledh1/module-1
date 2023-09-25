@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- bai7 -->
+<table>
+    <tr>
+        <td>Thời gian gọi <input type="text" id="goi" placeholder="Nhập số phút"></td>
+        <td>Số tin nhắn <input type="text" id="tn" placeholder="số tin nhắn"></td>
+        <td>Lưu lượng truy cập mạng <input id="mang" type="text" placeholder=" Lưu lượng MB"></td>
+        <td> <input type="button" value="Tính tiền" onclick="xu_ly()"></td>
+    </tr>
+</table>
+
+    <p id="ket_qua"></p>
+    
+
+    <script>
+        function xu_ly(){
+            var tiengoi = document.getElementById('goi').value
+            var tientn = document.getElementById('tn').value
+            var tienmang = document.getElementById('mang').value
+            tiengoi= parseInt(tiengoi)
+            tientn = parseInt(tientn)
+            tienmang = parseInt(tienmang)
+            var ket_qua = tiengoi*5000 + tientn*200 + tienmang*5000
+            document.getElementById('ket_qua').innerHTML = "số tiền thanh toán " + ket_qua + "VND"
+
+        }
+        //bai1
+    //   var a = prompt('nhập vào a')
+    //   var b = prompt('nhập vào b')
+    //   var c = a % b
+    //   if (c == 0){
+    //     alert (' a chia hết cho b')
+    //   }
+    //   else{
+    //     alert(' a không chia hết cho b')
+    //   }
+
+    // bài 2
+    // var tuoi = prompt(' Nhập tuổi')
+    // if (tuoi > 14 ){
+    //     alert(' đủ tuổi học lớp 10')
+    // }
+    // else{
+    //     alert(' không đủ tuổi học lớp 10')
+    // }
+
+    //bai 3
+    // var a = prompt(' Nhập vào số a')
+    // if (a >0){
+    //     alert( "số" + a + "lớn hơn 0")
+    // }
+    // else {
+    //     alert("số"+ a + " bé hơn 0")
+    // }
+
+    //bai4
+    // var a = prompt("nhập số a")
+    // var b = prompt("nhập số b")
+    // var c = prompt("nhập số c")
+    // if( a > b && a > c) {
+    //     alert (a + "lớn nhất")
+    // }
+    // else if (b > c){
+    //     alert ( b + "lớn nhất")
+    // }
+    // else {
+    //     alert(c +"lớn nhất")
+    // }
+
+    //bai5
+    // var diemkt = prompt("nhập điểm kiểm tra")
+    // var diemgk = prompt("nhập điểm giữa kỳ")
+    // var diemck = prompt("nhập điểm cuối kỳ")
+    // diemkt =parseInt (diemkt)
+    // diemgk = parseInt(diemgk)
+    // diemck = parseInt(diemck)
+    // var diemTB = (diemkt+diemgk*2+diemck*3) / 6
+    // if (diemTB >= 7 && diemTB < 8 ){
+    //     alert ("Học sinh khá")
+    // }
+    // else if ( diemTB >=8 && diemTB<9){
+    //     alert("Học sinh Giỏi")
+    // }
+    // else if (diemTB >= 9 && diemTB <= 10){
+    //     alert(' Học sinh xuất sắc')
+    // }
+    // else { alert ("Học sinh trung bình")}
+    
+
+    //bai6
+    // bán được 1 tới 99 sp nhân 0.1%
+    // bán được 100-999 sp nhận 0.3 %
+    // bán được 1000+ sp nhận 0.5%
+        // var doanhso = prompt(' Nhập doanh số bán hàng')
+        // if (doanhso >= 1 && doanhso < 100){
+        //     alert ( " Phần trăm hoa hồng nhận đc là 0.1")
+        // } 
+        // else if ( doanhso >=100 && doanhso < 1000){
+        //     alert ( " Phần trăm hoa hồng nhận được là 0.3")
+        // }
+        // else {
+        //     alert (' Phần trăm hoa hồng nhận được là 0.5')
+        // }
+    </script>
+</body>
+</html>
