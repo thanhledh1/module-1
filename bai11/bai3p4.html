@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <script>
+        var first = 0;
+        var second = 1;
+
+        console.log(first); // In ra số Fibonacci đầu tiên
+
+        for (var i = 2; i <= 20; i++) {
+            console.log(second); // In ra số Fibonacci hiện tại
+            var next = first + second;
+            first = second;
+            second = next;
+            if (next % 5 === 0) {
+                alert(next);
+                break;
+            }
+
+
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> CHUYỂN ĐỔI NHIỆT ĐỘ</h1>
+    <p>Chuyển đổi nhiệt độ từ độ F sang độ C</p><br>
+    Fahren <input type="number" id="nhap" oninput="xu_ly()" >
+   
+    <p id="ket_qua"></p>
+    <script>
+        function xu_ly(){
+            var F= document.getElementById("nhap").value;
+            
+            var C = (F - 32)/1.8
+            
+            document.getElementById("ket_qua").innerHTML = "kết quả" +" " + C
+        }
+      
+    </script>
+
+</body>
+</html>

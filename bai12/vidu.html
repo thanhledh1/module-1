@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var tusach = [
+        ['van',' su' ,'dia'], // hàng 0
+ //       0       1      2
+         ['toan', 'ly' ,'hoa'], //hàng 1
+  //      0       1      2
+        ['gdcd', 'tin', 'the duc'] // hàng 2
+ //       0       1      2
+     ]
+     console.log(tusach);
+     console.log(tusach[0][0]);
+     console.log(tusach[0][1]);
+     console.log(tusach[0][2]);
+     console.log(tusach[1][0]);
+     console.log(tusach[1][1]);
+     console.log(tusach[1][2]);
+
+     tusach[0][0] = "văn học"
+     tusach[0][1] = ' Lích sữ'
+     tusach[0][2] = 'địa lý'
+     tusach[1][0] = ' Toán học'
+     tusach[1][1] = ' vật lý'
+     tusach[1][2] = ' hoá học'
+     tusach[2][0] = ' Giáo dục CD'
+
+        console.log(tusach);
+        tusach[0].push("tiếng anh")
+        tusach[1].push('Âm nhạc')
+        tusach[2].push('Mỹ thuật')
+        console.log(tusach[0].length)
+
+        for (i = 0; i < tusach.length ; i++){
+            for ( j = 0 ; j < tusach[i].length; j++){
+                console.log(tusach[i][j]);
+            }
+        }
+        var nums = [
+            [1 ,2 ,3 ],
+            [4 ,5 ,6 ],
+            [7 ,8 ,9 ],
+        ]
+        var total = 0
+        for ( i = 0 ; i < nums.length; i++){
+            for ( j = 0 ; j < nums[i].length; j++){
+                total += nums[i][j]
+            }
+        }
+        console.log(total);
+
+       
+        for ( i = 0 ; i < nums.length; i++){
+            var totalcol = 0
+            for ( j = 0 ; j < nums[i].length; j++){
+                totalcol += nums[i][j]
+            }
+            console.log(totalcol);
+        }
+
+         var totalcheophai = 0;
+        for ( i = 0 ; i < nums.length; i++){
+            totalcheophai+= nums[i][i]
+        }
+        console.log(totalcheophai);
+       
+        var totalcheotrai = 0;
+        var j = nums.length -1
+        for ( i = 0 ; i < nums.length; i++){
+            totalcheotrai += nums[i][j] 
+            j--
+        }
+        console.log(totalcheotrai);
+
+
+
+
+    </script>
+</body>
+</html>

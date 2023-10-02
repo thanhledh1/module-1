@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var array = [
+        //     [3, 5, 1, 8, -3, 7, 8],
+
+        //     [7, 12, 6, 9, 20, 56, 89]
+        
+    //   for ( var i = 0 ; i < array.length ; i++ ){
+    //     for ( var j = 0 ; j < array[i].length ; j++ ){
+    //       console.log(array[i][j])
+    //     }
+    //   }
+    // function main(arr) {
+    //     var min = arr[0]
+    //     for (var i = 0; i < arr.length; i++) {
+    //         for (var j = 0; j < arr[i].length; j++) {
+    //             if (arr[i][j] < min) {
+    //                 min = arr[i][j]
+    //             }
+    //         }
+    //         return min
+//     for (let row of array) {
+//     for (let element of row) {
+//     console.log(element);
+//   }
+
+// min = main(array)
+//         console.log(min)
+
+
+
+function main(arr){
+    var min = arr[0]
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min){
+            min = arr[i]
+        }
+     
+    }
+    return min;
+}
+var arr1 = [3, 5, 1, 8, -3, 7, 8]
+ var min = main(arr1)
+alert(min)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cau_hoi(answer) {
+            if (answer) {
+                result = " chính xác"
+            } else {
+                result = " sai"
+            }
+            return result;
+        }
+        var comfim = confirm("Do you want to?")
+        var result = cau_hoi(comfim)
+        alert(result)
+
+    </script>
+</body>
+
+</html>

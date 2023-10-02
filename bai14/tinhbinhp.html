@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính bình phương</h1>
+    <input type="text" id="nhap" oninput="xu_ly()">
+    <span id = "resutl"></span>
+    <script>
+        function tinh_bp(num){
+         var kq = num * num;
+            return kq;
+        }
+        // var bp2 = tinh_bp(2)
+        // document.write('bình phương của 2 :'+ bp2)
+        function xu_ly(){
+            let input = document.getElementById("nhap").value
+            console.log("input", input)
+            var kq = tinh_bp(input);
+            document.getElementById('resutl').innerHTML = kq
+        }
+    
+    </script>
+</body>
+</html>

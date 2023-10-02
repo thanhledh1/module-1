@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var value = prompt('Nhập vào giá trị');
+        var number = [-3, 5, 1, 2, 3, 5, 10];
+        var index = ''
+        for (var i = 0; i < number.length; i++) {
+            if (value == number[i]) {
+                index = i;
+            }
+        }
+        if (index > -1) {
+            alert("Value " + value + "found at " + index);
+        }
+        else {
+            alert("Value " + value + " not found");
+        }
+        
+    </script>
+</body>
+
+</html>

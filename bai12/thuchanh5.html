@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Nhập vào tiếng Anh <input type="text" value="" id="nhap">;
+        <input type="button" value="Kết quả" onclick="xu_ly()">
+        <p id="result"></p>
+
+    </form>
+    <script>
+        function xu_ly() {
+            var e = ['hello', 'bye', 'love'];
+            var v = ['chào', 'tạm biệt', 'iu'];
+            var nhapchu = document.getElementById('nhap').value;
+            
+            var indexE = e.indexOf(nhapchu);
+            var result = v[indexE];
+            
+            // var indexE = -1
+            // for ( i = 0; i < e.length; i++) {
+            //     if (nhapchu == e[i]) {
+            //         indexE = i
+            //     }
+            // }
+            // var result = v[indexE];
+
+            document.getElementById("result").innerHTML = result
+        }
+    </script>
+</body>
+
+</html>
