@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quản lý sản phẩm</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+    
+        h1 {
+          text-align: center;
+        }
+    
+        form {
+          margin-bottom: 20px;
+        }
+    
+        label {
+          font-weight: bold;
+        }
+    
+        input[type="text"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        button {
+          padding: 5px 10px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+    
+        button:hover {
+          background-color: #45a049;
+        }
+    
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+    
+        th, td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+    
+        th {
+          background-color: #4CAF50;
+          color: white;
+        }
+    
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+      </style>
+</head>
+
+<body>
+    <h1>Quản lý sản phẩm</h1>
+
+    <div>
+        <form id="addProductForm">
+            <label for="productName">Tên sản phẩm:</label>
+            <input type="text" id="productName" required>
+            <button type="submit">Thêm</button>
+        </form>
+    </div>
+
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Số thứ tự</th>
+                <th>Tên sản phẩm</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        // Bước 2: Tạo một mảng chứa danh sách sản phẩm
+        let products = [];
+
+        // Bước 3: Xây dựng các hàm hiển thị danh sách sản phẩm, thêm một sản phẩm vào danh sách, sửa tên sản phẩm, xoá sản phẩm
+        function displayProductList() {
+            const tableBody = document.querySelector("#productTable tbody");
+            tableBody.innerHTML = "";
+
+            for (let i = 0; i < products.length; i++) {
+                const product = products[i];
+                const row = document.createElement("tr");
+
+                const indexCell = document.createElement("td");
+                indexCell.textContent = i + 1;
+                row.appendChild(indexCell);
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = product;
+                row.appendChild(nameCell);
+
+                const deleteCell = document.createElement("td");
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Xoá";
+                deleteButton.addEventListener("click", function () {
+                    deleteProduct(i);
+                });
+                deleteCell.appendChild(deleteButton);
+                row.appendChild(deleteCell);
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function addProduct(productName) {
+            products.push(productName);
+            displayProductList();
+        }
+
+        function editProduct(index, newName) {
+            products[index] = newName;
+            displayProductList();
+        }
+
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            displayProductList();
+        }
+
+        // Bước 4: Gọi hàm hiển thị danh sách sản phẩm
+        displayProductList();
+
+        // Bước 5: Gọi hàm thêm một sản phẩm vào danh sách
+        const addProductForm = document.querySelector("#addProductForm");
+        addProductForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const productNameInput = document.querySelector("#productName");
+            const productName = productNameInput.value;
+            addProduct(productName);
+            productNameInput.value = "";
+            alert("Thêm sản phẩm thành công.");
+        });
+
+        // Bước 6: Gọi hàm sửa một sản phẩm trong danh sách
+        const productTable = document.querySelector("#productTable");
+        productTable.addEventListener("click", function (event) {
+            if (event.target.tagName === "TD" && event.target !== event.currentTarget) {
+                const nameCell = event.target;
+                const productName = nameCell.textContent;
+                const newName = prompt("Nhập tên mới:", productName);
+                if (newName && newName !== productName) {
+                    const index = Array.from(nameCell.parentNode.parentNode.children).indexOf(nameCell.parentNode);
+                    editProduct(index, newName);
+                }
+            }
+        });
+
+        // Bước 7: Gọi hàm xoá một sản phẩm trong danh sách
+        function deleteProduct(index) {
+            const confirmDelete = confirm("Bạn có chắc chắn muốn xoá sản phẩm này?");
+            if (confirmDelete) {
+                products.splice(index, 1);
+                displayProductList();
+            }
+        }
+    </script>
+</body>
+
+</html>

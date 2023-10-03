@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- bài 1
+    <script>
+        function binh_phuong(a){
+            let b = 0;
+             b = a * a ;
+            return b;
+        }
+        document.write(binh_phuong(8) + "<br>"); 
+     </script> -->
+    <!-- bài 2
+     <script>
+        function S(r){
+            let s = 0;
+            s = r *r *3.14
+            return s;
+        }
+        function P(r){
+            let p = 0;
+            p = r *2 *3.14
+            return p;
+        }
+        console.log("diện tích khi bán kính bằng" + " " + 4 + " "+"là:"+S(4));
+        console.log("chu vi khi bán kính bằng" + " " + 4 + " "+"là:"+P(4));
+     </script> -->
+    <!-- 
+     bài3
+    <script>
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        console.log(factorial(5));
+    </script> -->
+    <!-- bai4
+    <script>
+        function isNumeric(character) {
+            return !isNaN(parseFloat(character)) && isFinite(character);
+        }
+        var character = prompt('Nhập vô')
+        var isNumber = isNumeric(character);
+        console.log(isNumber)
+    </script> -->
+    <!-- bai6
+    <script>
+        function checkNumber(number) {
+            if ( number > 0){
+                alert('là số nguyên dương') 
+            } else { alert('ko phải số nguyên dương')}
+            return number;
+                }
+                var number = prompt('Nhập số')
+                checkNumber((number))
+    </script> -->
+    <!-- bai 5
+    <script>
+        function findMinInteger(a, b, c) {
+            return Math.min(a, b, c);
+        }
+        var a = 5;
+        var b = 2;
+        var c = 8;
+        var minInteger = findMinInteger(a, b, c);
+        console.log("Số nguyên nhỏ nhất là: " + minInteger); // Kết quả: Số nguyên nhỏ nhất là: 2
+    </script> -->
+    <!-- bai7
+    <script>
+        function swapIntegers(a, b) {
+            // Sử dụng một biến tạm để lưu giá trị của a
+            var temp = a;
+            // Gán giá trị của b cho a
+            a = b;
+            // Gán giá trị của biến tạm vào b
+            b = temp;
+            // Trả về mảng chứa hai số đã được đổi chỗ
+            return [a, b];
+        }
+        var a = 5;
+        var b = 2;
+        console.log(swapIntegers(a,b));
+    </script> -->
+    <!-- bai8
+    <script>
+        function reverseArray(arr) {
+            // Sử dụng phương thức reverse để đảo ngược mảng
+            var reversedArray = arr.reverse();
+            // Trả về mảng đã đảo ngược
+            return reversedArray;
+        }
+        // Sử dụng hàm reverseArray
+        var numbers = [1, 2, 3, 4, 5];
+        var reversedNumbers = reverseArray(numbers);
+        console.log("Mảng sau khi đảo ngược: " + reversedNumbers);
+    </script> -->
+    <!-- bai9
+    <script>
+        function countOccurrences(arr, character) {
+            var count = 0;
+            // Duyệt qua từng phần tử trong mảng
+            for (var i = 0; i < arr.length; i++) {
+                // Kiểm tra xem phần tử có bằng ký tự đang kiểm tra không
+                if (arr[i] === character) {
+                    count++;
+                }
+            }
+            // Trả về số lần xuất hiện của ký tự trong mảng nếu có, hoặc -1 nếu không có
+            return count > 0 ? count : -1;
+        }
+        // Sử dụng hàm countOccurrences
+        var chars = ['a', 'b', 'c', 'a', 'd', 'e', 'a'];
+        var characterToCheck = 'a';
+        var occurrences = countOccurrences(chars, characterToCheck);
+
+        console.log("Số lần xuất hiện của ký tự '" + characterToCheck + "': " + occurrences);
+    </script> -->
+
+
+
+
+
+</body>
+
+</html>

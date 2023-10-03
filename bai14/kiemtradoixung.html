@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(word) {
+            // Chuyển đổi thành chữ thường và loại bỏ các ký tự không phải chữ cái
+            const cleanedWord = word.toLowerCase().replace(/[^a-z]/g, '');
+
+            // Đảo ngược chuỗi
+            const reversedWord = cleanedWord.split('').reverse().join('');
+
+            // So sánh chuỗi đảo ngược với chuỗi gốc
+            return cleanedWord === reversedWord;
+        }
+
+        // Kiểm tra các từ đối xứng
+        const words = ['level', 'radar', 'hello', 'madam'];
+
+        words.forEach(word => {
+            if (isPalindrome(word)) {
+                console.log(`${word} là từ đối xứng.`);
+            } else {
+                console.log(`${word} không phải là từ đối xứng.`);
+            }
+        });
+    </script>
+</body>
+</html>

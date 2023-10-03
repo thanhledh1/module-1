@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculateInterest(principal, months, interestRate) {
+            let balance = principal;
+            for (let i = 0; i < months; i++) {
+                const interest = balance * (interestRate / 100);
+                balance += interest;
+            }
+            const totalInterest = balance - principal;
+            return totalInterest;
+        }
+
+        const principal = 10000; // Số tiền ban đầu
+        const months = 12; // Số tháng cho vay
+        const interestRate = 0.5; // Lãi suất hàng tháng (tính bằng phần trăm)
+
+        const interest = calculateInterest(principal, months, interestRate);
+        console.log(`Lãi ngân hàng sau ${months} tháng là: ${interest}`)
+    </script>
+</body>
+
+</html>
