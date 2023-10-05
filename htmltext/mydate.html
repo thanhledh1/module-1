@@ -1,0 +1,37 @@
+<script>
+    var MyDate = function (day, month, year) {
+
+        // khai báo thuộc tính
+        this.day = day
+        this.month = month
+        this.year = year
+        // phương thức
+        this.setday = function (day) {
+            this.day = day
+        }
+        this.setmonth = function (month) {
+            this.month = month
+        }
+        this.setyear = function (year) {
+            this.year = year
+        }
+        this.getday = function () {
+            return this.day
+        }
+        this.getmonth = function () {
+            return this.month
+        }
+        this.getyear = function () {
+            return this.year 
+        }
+        this.ToString = function () {
+            return this.getday() + "/" + this.getmonth() + "/" + this.getyear()
+        }
+    }
+        var date = new MyDate(5, 10, 2023);
+        date.setday(6)
+        date.setmonth(11)
+        date.setyear(2024)
+        console.log(date);
+        console.log(date.ToString);
+</script>

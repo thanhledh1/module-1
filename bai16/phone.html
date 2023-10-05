@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mobile {
+  constructor() {
+    this.battery = 100;
+    this.draftMessage = "";
+    this.inbox = [];
+    this.sentMessages = [];
+    this.powerOn = false;
+  }
+
+  checkPowerStatus() {
+    return this.powerOn;
+  }
+
+  turnOn() {
+    this.powerOn = true;
+    console.log("Điện thoại đã được bật.");
+  }
+
+  turnOff() {
+    this.powerOn = false;
+    console.log("Điện thoại đã được tắt.");
+  }
+
+  chargeBattery() {
+    if (this.battery < 100) {
+      this.battery += 1;
+      console.log("Điện thoại đang được sạc pin.");
+    } else {
+      console.log("Điện thoại đã đầy pin.");
+    }
+  }
+
+  composeMessage(text) {
+    if (this.powerOn) {
+      this.draftMessage = text;
+      console.log("Đã soạn tin nhắn.");
+      this.battery -= 1;
+    } else {
+      console.log("Điện thoại chưa được bật.");
+    }
+  }
+
+  receiveMessage(message) {
+    if (this.powerOn) {
+      this.inbox.push(message);
+      console.log("Đã nhận tin nhắn mới.");
+      this.battery -= 1;
+    } else {
+      console.log("Điện thoại chưa được bật.");
+    }
+  }
+
+  sendMessage(message, mobile) {
+    if (this.powerOn) {
+      mobile.receiveMessage(message);
+      this.sentMessages.push(message);
+      console.log("Đã gửi tin nhắn.");
+      this.battery -= 1;
+    } else {
+      console.log("Điện thoại chưa được bật.");
+    }
+  }
+
+  viewInbox() {
+    if (this.powerOn) {
+      console.log("Hộp thư đến:");
+      this.inbox.forEach((message, index) => {
+        console.log(index + 1 + ". " + message);
+      });
+      this.battery -= 1;
+    } else {
+      console.log("Điện thoại chưa được bật.");
+    }
+  }
+
+  viewSentMessages() {
+    if (this.powerOn) {
+      console.log("Tin nhắn đã gửi:");
+      this.sentMessages.forEach((message, index) => {
+        console.log(index + 1 + ". " + message);
+      });
+      this.battery -= 1;
+    } else {
+      console.log("Điện thoại chưa được bật.");
+    }
+  }
+}
+
+// Khởi tạo các đối tượng điện thoại
+let nokia = new Mobile();
+let iphone = new Mobile();
+
+// Bật điện thoại Nokia
+nokia.turnOn();
+
+// Soạn tin nhắn trên điện thoại Nokia và gửi cho iPhone
+nokia.composeMessage("Xin chào từ Nokia!");
+nokia.sendMessage(nokia.draftMessage, iphone);
+
+// iPhone kiểm tra inbox và hiển thị tin nhắn
+iphone.viewInbox();
+    </script>
+</body>
+</html>

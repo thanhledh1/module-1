@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var thanh = {
+            name: "Thanh",
+            age: 28,
+            address: "dong ha",
+            city: "quang tri",
+            country: "Vietnam",
+            play_game : function(tengame) {
+                console.log("play game: " + tengame);
+            },
+            eat_food : function(tenfood) {
+                console.log("eat_food: " + tenfood);
+            },
+            relax : function() {     
+                return "relax"   
+            }
+        };
+        // thay đổi giá trị thuôc tính
+        thanh.name = "thắng"
+        thanh.age = 40
+        thanh.country = "lào"
+        console.log(thanh);
+        console.log(thanh.name);
+        console.log(thanh.age);
+        console.log(thanh.address);
+        console.log(thanh.city);
+        console.log(thanh.country);
+        thanh.play_game("fifa");
+        thanh.eat_food("banh bao");
+        
+        console.log(thanh.relax());
+    </script>
+</body>
+
+</html>
