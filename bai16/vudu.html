@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Example</title>
+</head>
+<body>
+
+<script>
+    function Car(name, model, weight, color) {
+        this.name = name;
+        this.model = model;
+        this.weight = weight;
+        this.color = color;
+        this.getname = function () { return this.name; };
+
+        this.getmodel = function () { return this.model; };
+
+        this.getweight = function () { return this.weight; };
+
+        this.getcolor = function () { return this.color; };
+
+        this.setname = function (name) { this.name = name; };
+
+        this.setmodel = function (model) { this.model = model; };
+
+        this.setweight = function (weight) { this.weight = weight; };
+
+        this.setcolor = function (color) { this.color = color; };
+
+        //Phương thức
+        this.start = function () {
+            console.log("Starting...");
+        }
+    }
+
+    var car = new Car("BMW","I8","100KG","BLACK");
+    var name = car.getname();
+    var model = car.getmodel();
+    var weight = car.getweight();
+    var color = car.getcolor();
+    var start = car.getstart();
+    console.log(name + " " + model + " " + weight + " " + color);
+    car.start();
+</script>
+
+</body>
+</html>

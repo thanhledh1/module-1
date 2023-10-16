@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function miniMaxSum(arr) {
+  // Sắp xếp mảng theo thứ tự tăng dần
+  arr.sort((a, b) => a - b);
+
+  // Tính tổng nhỏ nhất bằng cách cộng 4 số đầu tiên
+  let minSum = arr.slice(0, 4).reduce((sum, num) => sum + num, 0);
+
+  // Tính tổng lớn nhất bằng cách cộng 4 số cuối cùng
+  let maxSum = arr.slice(arr.length - 4).reduce((sum, num) => sum + num, 0);
+
+  // In kết quả
+  console.log(minSum, maxSum);
+}
+const arr = [3,4,2,3,1];
+miniMaxSum(arr); // Output: 10 14
+    </script>
+</body>
+</html>

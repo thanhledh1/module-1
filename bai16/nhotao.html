@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        // khai bao class
+        class Apple {
+            constructor(weight) {
+                this.weight = weight
+            };
+            //  Phương thức này trả về giá trị của thuộc tính weight
+            getWeight() {
+                return this.weight
+            }
+            // hương thức này được sử dụng để thiết lập giá trị mới cho thuộc tính weight của đối tượng
+            setWeight(weight) {
+                this.weight = weight
+            }
+            // Phương thức này kiểm tra xem táo có trống không. 
+            isEmpty() {
+                if (this.weight <= 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            // Phương thức này giảm trọng lượng của táo đi 1 đơn vị.
+            decreaseApple() {
+                if (this.isEmpty()) {
+                    alert("Táo đã hết rồi");
+                } else {
+                    this.weight--;
+                }
+            }
+        };
+        console.log(typeof(Apple));
+        class Human {
+            constructor(name, gender, weight) {
+                this.name = name
+                this.gender = gender
+                this.weight = weight
+            }
+            setName(name) {
+                this.name = name
+            }
+            getName() {
+                return this.name
+            }
+            setWeight(weight) {
+                this.weight = weight
+            }
+            getWeight() {
+                return this.weight
+            }
+            isMale() {
+                if (this.gender == 1) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            getGender() {
+                if (this.isMale()) {
+                    return "Male"
+                } else {
+                    return "Famale"
+                }
+            }
+            say(string) {
+                console.log(string);
+            }
+            // Phương thức này kiểm tra xem táo có trống không bằng cách gọi phương thức isEmpty() trên đối tượng apple.
+            checkApple(apple) {
+                return apple.isEmpty()
+            }
+            eat(apple) {
+                if (apple.getWeight() > 0) {
+                    // Nếu trọng lượng (weight) của táo lớn hơn 0, phương thức giảm trọng lượng của táo bằng cách gọi phương thức decreaseApple()
+                    apple.decreaseApple()
+                    this.weight++
+                } else { alert(" táo đã hết rùi)") }
+            }
+            getInfo(human) {
+                alert(human.name + " " + human.weight + " " + human.getGender())
+            }
+
+        }
+        let adam = new Human("ADAM", 1, 100)
+        let eva = new Human("EVA", 2, 50)
+        let apple_1 = new Apple(10)
+        // adam.checkApple(apple_1)
+        adam.say("tui là adam")
+        eva.say("tui là eva")
+        
+        while (apple_1.isEmpty() !== true) {
+            document.write("Adam ăn táo" + "<br>");
+            adam.eat(apple_1);
+            document.write("Quả táo còn: " + "<br>");
+            document.write(apple_1.getWeight() + " đơn vị" + "<br>");
+            document.write("Cân nặng của Adm là: " + adam.getWeight() + " đơn vị" + "<br>");
+            document.write("<br>")
+
+            document.write("Eva ăn táo" + "<br>");
+            eva.eat(apple_1);
+            document.write("Quả táo còn: " + "<br>");
+            document.write(apple_1.getWeight() + " đơn vị" + "<br>");
+            document.write("Cân nặng là: " + eva.getWeight() + " đơn vị" + "<br>");
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

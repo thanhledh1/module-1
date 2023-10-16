@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function insertNumberToArray(arr, x, index) {
+            if (index < 0 || index > arr.length) {
+                return arr; // Trả về mảng ban đầu nếu index không hợp lệ
+            }
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (i === index) {
+                result.push(x); // Thêm số x vào vị trí index
+                }
+                result.push(arr[i]); // Sao chép các phần tử của mảng ban đầu vào mảng kết quả
+            }
+
+            if (index === arr.length) {
+                result.push(x); // Thêm số x vào cuối mảng nếu index bằng chiều dài mảng ban đầu
+            }
+            return result;
+            }
+            let arr = [1, 2, 3, 4, 5];
+            let x = 6;
+            let index = 3;
+
+            let result = insertNumberToArray(arr, x, index);
+            console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Who is millionaire</title>
+ <link rel="stylesheet" href="index.css">
+</head>
+<div>
+    <h2 id="styleTime">
+        Time remaining:<span id="timeCountDown"></span>
+    </h2>
+</div>
+<div id='point' , style="text-align: center; color: aliceblue;" >
+    <h2 id="result"></h2>
+</div>
+<body>
+<div id="wrapper">
+    <div id="questionScreen" class="hide">
+        <div id="question"></div>
+        <div id="answer">
+            <table>
+                <tr>
+            <td><button id="answer_1" class="an_" onclick="checkAnswer(0)"></button></td>
+            <td><button id="answer_2" class="an_" onclick="checkAnswer(1)"></button></td>
+                </tr>
+                <tr>
+            <td><button id="answer_3" class="an_" onclick="checkAnswer(2)"></button></td>
+            <td><button id="answer_4" class="an_" onclick="checkAnswer(3)"></button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="question.js">
+  
+</script>
+</body>
+</html>

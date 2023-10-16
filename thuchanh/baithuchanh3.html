@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumOfListPrime(x) {
+            let sum = 0;
+            // Kiểm tra xem một số có phải là số nguyên tố hay không
+            function Check(num) {
+                if (num < 2) {
+                return false;
+                }
+
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+                }
+                return true;
+            }
+            // Tính tổng các số nguyên tố từ 0 đến x
+            for (let i = 0; i <= x; i++) {
+                if (Check(i)) {
+                sum += i;
+                }
+            }
+            return sum;
+            }
+            // Ví dụ sử dụng hàm
+            console.log(sumOfListPrime(10)); // Kết quả: 17
+           
+    </script>
+</body>
+</html>
